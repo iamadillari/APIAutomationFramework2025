@@ -1,13 +1,16 @@
 package com.qa.api.base;
 
+import com.aventstack.chaintest.plugins.ChainTestListener;
 import com.qa.api.client.RestClient;
 import com.qa.api.manager.ConfigManager;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 
 /**
  * Base test class for API testing.
  * Provides common setup and configuration for API tests, including base URLs and endpoints.
  */
+@Listeners(ChainTestListener.class)
 public class BaseTest {
 
     /** Instance of RestClient used for making API requests. */

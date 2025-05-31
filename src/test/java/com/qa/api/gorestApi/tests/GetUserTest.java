@@ -1,5 +1,6 @@
 package com.qa.api.gorestApi.tests;
 
+import com.aventstack.chaintest.plugins.ChainTestListener;
 import com.qa.api.base.BaseTest;
 import com.qa.api.constants.AuthType;
 import io.restassured.http.ContentType;
@@ -31,6 +32,7 @@ public class GetUserTest extends BaseTest {
 
         // Assert that the response body is not null
         Assert.assertNotNull(actualResponse.body());
+        ChainTestListener.log("Get All Users Test");
     }
 
     /**
@@ -53,6 +55,7 @@ public class GetUserTest extends BaseTest {
 
         // Assert that the response body is not null
         Assert.assertNotNull(actualResponse.body());
+        ChainTestListener.log("Get All Users With Query Parameters Test");
     }
 
     /**
@@ -77,6 +80,7 @@ public class GetUserTest extends BaseTest {
 
         // Assert that the user ID in the response matches the requested user ID
         Assert.assertEquals(actualResponse.jsonPath().getString("id"), userID);
+        ChainTestListener.log("Get Single User Test");
     }
 
 }
