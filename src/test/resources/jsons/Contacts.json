@@ -1,0 +1,13 @@
+{
+  "firstName": "Aditya",
+  "lastName": "Sharma",
+  "birthdate": "1991-01-01",
+  "email": "adityasharma@yahoo.com",
+  "phone": "8005555555",
+  "street1": "1 Main St.",
+  "street2": "Apartment A",
+  "city": "Gurgaon",
+  "stateProvince": "HR",
+  "postalCode": "203208",
+  "country": "India"
+}

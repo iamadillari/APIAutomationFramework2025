@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="API Regression Test Suite" verbose="4">
+
+    <test name="Go Rest API Test- GET USERS">
+        <classes>
+            <class name="com.qa.api.gorestApi.tests.GetUserTest"></class>
+        </classes>
+    </test>
+
+    <test name="Go Rest API Test- CREATE USER">
+    <classes>
+        <class name="com.qa.api.gorestApi.tests.CreateUserTest"></class>
+    </classes>
+    </test>
+
+    <test name="Go Rest API Test- UPDATE USER">
+        <classes>
+            <class name="com.qa.api.gorestApi.tests.UpdateUserTest"></class>
+        </classes>
+    </test>
+
+    <test name="Go Rest API Test- DELETE USER">
+        <classes>
+            <class name="com.qa.api.gorestApi.tests.DeleteUserTest"></class>
+        </classes>
+    </test>
+
+</suite>
