@@ -1,6 +1,6 @@
 {
   "name": "Naveen",
-  "email": "naveen9676378@yahoo.com",
+  "email": "{{email}}",
   "gender": "male",
   "status": "inactive"
 }

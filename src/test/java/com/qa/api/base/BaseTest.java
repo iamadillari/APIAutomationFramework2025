@@ -1,16 +1,17 @@
 package com.qa.api.base;
 
-import com.aventstack.chaintest.plugins.ChainTestListener;
 import com.qa.api.client.RestClient;
 import com.qa.api.manager.ConfigManager;
+import io.qameta.allure.restassured.AllureRestAssured;
+import io.restassured.RestAssured;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
 
 /**
  * Base test class for API testing.
  * Provides common setup and configuration for API tests, including base URLs and endpoints.
  */
-@Listeners(ChainTestListener.class)
+//@Listeners(ChainTestListener.class)
 public class BaseTest {
 
     /** Instance of RestClient used for making API requests. */
@@ -56,6 +57,11 @@ public class BaseTest {
     /** Endpoint for the AMADEUS API flight Destinations */
     protected final static String AMADEUSAPI_FLIGHTDESTINATIONS_ENDPOINT = ConfigManager.get("endPoint_flightDestination");
 
+
+    @BeforeSuite
+    public void setupAllureReport(){
+        RestAssured.filters(new AllureRestAssured());
+    }
 
     /**
      * Sets up the test environment by initializing the RestClient instance.
