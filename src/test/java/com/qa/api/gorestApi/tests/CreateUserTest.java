@@ -8,7 +8,9 @@ import io.qameta.allure.*;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import software.amazon.awssdk.services.s3.endpoints.internal.Value;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -22,6 +24,16 @@ import java.nio.file.Paths;
 @Story("Creating of GoRest Users") // Specifies the story associated with these tests in Allure reports.
 public class CreateUserTest extends BaseTest {
 
+    @DataProvider
+    public Object[][] getUserData(){
+        return new Object[][]{
+                {"Aditi","female","active"},
+                {"Payal","female","inactive"},
+                {"Rashmi","female","inactive"},
+                {"Elmar","male","active"}
+        };
+    }
+
     /**
      * Test to create a user using a User object.
      * Verifies the response status code, name, and ID in the response.
@@ -29,8 +41,8 @@ public class CreateUserTest extends BaseTest {
     @Description("Creation of a User Test using a DTO/POJO for GoRest API") // Provides a description for the test in Allure reports.
     @Owner("Adil Lari") // Specifies the owner of the test in Allure reports.
     @Severity(SeverityLevel.CRITICAL) // Marks the severity level of the test in Allure reports.
-    @Test
-    public void createAUserTest() {
+    @Test(dataProvider = "getUserData")
+    public void createAUserTest(String name, String gender, String status) {
         // Generate a random email ID for testing purposes
         Allure.step("Generate a random email ID for testing purposes");
         String emailId = StringUtils.generateRandomEmailId();
@@ -38,7 +50,7 @@ public class CreateUserTest extends BaseTest {
 
         // Create a User object with test data
         Allure.step("Create a User object with test data");
-        User user = new User(null, "Aditya", emailId, "male", "active");
+        User user = new User(null, name, emailId, gender, status);
 
         // Send a POST request to create the user
         Allure.step("Send a POST request to create the user");
@@ -51,7 +63,7 @@ public class CreateUserTest extends BaseTest {
 
         // Assert the response contains the correct name
         Allure.step("Assert the response contains the correct name");
-        Assert.assertEquals(actualResponse.jsonPath().getString("name"), "Aditya");
+        Assert.assertEquals(actualResponse.jsonPath().getString("name"), name);
 
         // Assert the response contains a non-null ID
         Allure.step("Assert the response contains a non-null ID");
