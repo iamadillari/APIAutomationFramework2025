@@ -2,27 +2,33 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="API Regression Test Suite" verbose="4">
 
-    <test name="Go Rest API Test- GET USERS">
+    <test name="Validating the functionality of the Contacts API">
         <classes>
-            <class name="com.qa.api.gorestApi.tests.GetUserTest"></class>
+            <class name="com.qa.api.contactsApi.tests.ContactsApiTest"></class>
         </classes>
     </test>
 
-    <test name="Go Rest API Test- CREATE USER">
-    <classes>
-        <class name="com.qa.api.gorestApi.tests.CreateUserTest"></class>
-    </classes>
-    </test>
-
-    <test name="Go Rest API Test- UPDATE USER">
+    <test name="Validating the Get Users API endpoint">
         <classes>
-            <class name="com.qa.api.gorestApi.tests.UpdateUserTest"></class>
+            <class name="com.qa.api.reqResApi.tests.ReqResTest"></class>
         </classes>
     </test>
 
-    <test name="Go Rest API Test- DELETE USER">
+    <test name="Validating the Amadeus API endpoints">
         <classes>
-            <class name="com.qa.api.gorestApi.tests.DeleteUserTest"></class>
+            <class name="com.qa.api.amadeusAPI.tests.AmadeusApiTest"></class>
+        </classes>
+    </test>
+
+    <test name="Validating the functionality of Basic Authentication">
+        <classes>
+            <class name="com.qa.api.basicAuth.tests.BasicAuthTest"></class>
+        </classes>
+    </test>
+
+    <test name="Validating API schemas of GoRest User APIs.">
+        <classes>
+            <class name="com.qa.api.schemaValidation.tests.GoRestUserApiSchemaTest"></class>
         </classes>
     </test>
 
