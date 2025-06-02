@@ -114,7 +114,7 @@
                     <forkCount>3</forkCount>
                     <reuseForks>true</reuseForks>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/testRunners/testng-regression.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/testRunners/testng_sanity.xml</suiteXmlFile>
                         <!--<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>-->
                     </suiteXmlFiles>
 
