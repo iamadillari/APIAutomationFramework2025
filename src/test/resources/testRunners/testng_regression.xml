@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="API Regression Test Suite" verbose="4">
+<suite name="API Regression Test Suite">
 
-    <listeners>
-        <listener class-name="com.aventstack.chaintest.plugins.ChainTestListener" />
-    </listeners>
     <test name="Validating the functionality of the Contacts API">
         <classes>
             <class name="com.qa.api.contactsApi.tests.ContactsApiTest"></class>
@@ -30,10 +27,57 @@
         </classes>
     </test>
 
-    <test name="Validating API schemas of GoRest User APIs.">
+    <test name="Validating API schemas of GoRest User APIs">
         <classes>
             <class name="com.qa.api.schemaValidation.tests.GoRestUserApiSchemaTest"></class>
         </classes>
     </test>
+
+    <test name="Validating Go Rest API using Data Provider for multiple set of data">
+        <classes>
+            <class name="com.qa.api.gorestApi.tests.CreateUserTest"></class>
+        </classes>
+    </test>
+
+    <test name="Validating the functionality of deleting a user in the GoRest API.">
+        <classes>
+            <class name="com.qa.api.gorestApi.tests.DeleteUserTest"></class>
+        </classes>
+    </test>
+
+    <test name="Validating Go Rest API for creating and retrieving a user using deserialization">
+        <classes>
+            <class name="com.qa.api.gorestApi.tests.GetAUserWithDeserializationTest"></class>
+        </classes>
+    </test>
+
+    <test name="Validating Go Rest API to retrieve user details from the API">
+        <classes>
+            <class name="com.qa.api.gorestApi.tests.GetUserTest"></class>
+        </classes>
+    </test>
+
+    <test name="Validating Go Rest API for creating a user, fetching the user details, and updating the user">
+        <classes>
+            <class name="com.qa.api.gorestApi.tests.UpdateUserTest"></class>
+        </classes>
+    </test>
+
+    <test name="Validating retrieval of all the products from the Product API">
+        <classes>
+            <class name="com.qa.api.productsApi.tests.ProductAPITest"></class>
+        </classes>
+    </test>
+
+    <test name="Validating the FakeStore API endpoints">
+        <classes>
+            <class name="com.qa.api.productsApi.tests.ProductApiWithJsonPathTest"></class>
+        </classes>
+    </test>
+
+
+    <listeners>
+        <listener class-name="com.aventstack.chaintest.plugins.ChainTestListener"/>
+    </listeners>
 
 </suite>
