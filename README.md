@@ -24,7 +24,7 @@ mvn clean install
    ```
 2. Execute the test suite using Maven:
    ```bash
-   mvn test -DsuiteXmlFile=src/test/resources/testRunners/testng-regression.xml
+   mvn test -DsuiteXmlFile=regression file
    ```
 
 
