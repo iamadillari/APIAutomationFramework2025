@@ -21,13 +21,13 @@
         </classes>
     </test>
 
-    <test name="Validating the functionality of Basic Authentication">
+    <test name="Validating the functionality of basic Authentication">
         <classes>
             <class name="com.qa.api.basicAuth.tests.BasicAuthTest"></class>
         </classes>
     </test>
 
-    <test name="Validating API schemas of GoRest User APIs">
+    <test name="Validating API schemas of the GoRest User APIs">
         <classes>
             <class name="com.qa.api.schemaValidation.tests.GoRestUserApiSchemaTest"></class>
         </classes>
