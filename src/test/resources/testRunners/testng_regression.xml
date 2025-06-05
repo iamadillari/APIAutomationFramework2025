@@ -3,7 +3,7 @@
 
 <suite name="API Regression Test Suite">
 
-    <test name="Validating the functionality of the Contacts API">
+    <test name="Validating the Functionality of the Contacts API">
         <classes>
             <class name="com.qa.api.contactsApi.tests.ContactsApiTest"></class>
         </classes>
@@ -21,7 +21,7 @@
         </classes>
     </test>
 
-    <test name="Validating the functionality of basic Authentication">
+    <test name="Validating the Functionality of basic Authentication">
         <classes>
             <class name="com.qa.api.basicAuth.tests.BasicAuthTest"></class>
         </classes>
